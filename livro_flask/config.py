@@ -8,6 +8,7 @@ class Config(object):
     TEMPLATE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     APP = None
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://root:PASSWORD@host:3306/livro_flask' # inserir dados do banco de dados
 
 
 class DevelopmentConfig(Config):
@@ -41,6 +42,3 @@ app_config = {
             }
 
 app_active = os.getenv('FLASK_ENV')
-
-print(app_config)
-print(app_active)
